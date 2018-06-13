@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['execute.py'],
-             pathex=['D:\\Python Project\\MyDataProject-master\\venv'],
+             pathex=['D:\\PythonProject\\MyDataProject\\venv'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -18,16 +18,12 @@ pyz = PYZ(a.pure, a.zipped_data,
              cipher=block_cipher)
 exe = EXE(pyz,
           a.scripts,
-          exclude_binaries=True,
+          a.binaries,
+          a.zipfiles,
+          a.datas,
           name='execute',
           debug=False,
           strip=False,
           upx=True,
-          console=False , icon='icon.ico')
-coll = COLLECT(exe,
-               a.binaries,
-               a.zipfiles,
-               a.datas,
-               strip=False,
-               upx=True,
-               name='execute')
+          runtime_tmpdir=None,
+          console=False )

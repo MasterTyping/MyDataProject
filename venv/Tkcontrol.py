@@ -26,7 +26,7 @@ class TkController():
         self.Window.title(self.title)
         self.Window.iconbitmap(self.icon)
         self.Window.geometry("%dx%d+%d+%d"%(self.w,self.h,self.x,self.y))
-        self.Window.configure(bg='green')
+        self.Window.configure(bg='black')
         #self.Window.wm_attributes("-topmost",True)
         #self.Window.wm_attributes("-disabled", True)
 
@@ -37,12 +37,12 @@ class TkController():
         self.ImageData[name]=PhotoImage(data=data)
     #Add Button to Dictionary
     def AddButton(self,name,x,y):
-        self.Buttons[name]= Button(self.Window,text=name,bg='green',fg="yellow")
+        self.Buttons[name]= Button(self.Window,text=name,bg='black',fg="yellow")
         self.Buttons[name].place(x=x,y=y)
         #print(self.Buttons)
     #Add Label to Dictionary
     def AddLabel(self,name,x,y):
-        self.Labels[name] = Label(self.Window,bg='green',fg="yellow")
+        self.Labels[name] = Label(self.Window,bg='black',fg="yellow")
         self.Labels[name].place(x=x,y=y)
         #print(self.Labels)
     def AddTextBox(self,name,x,y):
